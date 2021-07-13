@@ -12,6 +12,7 @@ popUpError.addEventListener('click',function (){
    cauntionMessage.classList.add('hidden');
    popUp.classList.add('hidden');
 })
+
 upgradeButton.addEventListener('click', function (){
    if (10 > counter){
       popUp.classList.remove('hidden');
@@ -20,14 +21,14 @@ upgradeButton.addEventListener('click', function (){
 
    }
    else {
-      counter = counter - 10;
-      upgrade0 = upgrade0 + 1;
+      counter -= 10;
+      upgrade0++;
       h1Counter.textContent = 'click counter: ' + counter;
    }
 
 });
 
 buttonId.addEventListener('click', function (){
-   counter = counter + upgrade0;
+   counter += upgrade0;
    h1Counter.textContent = 'click counter: '+ counter;
 });
