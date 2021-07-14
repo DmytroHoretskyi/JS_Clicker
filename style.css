@@ -1,5 +1,9 @@
 .clicker{
     margin-top: 50px ;
+    margin-left: 50px;
+    text-align: start;
+}
+#counter{
     text-align: center;
 }
 #siteBlocker{
@@ -18,9 +22,26 @@
     text-align: center;
 
 }
+#mistake{
+    font-size: 25px;
+    color: chartreuse;
+}
 #clickButton{
     position: center;
 }
 .hidden{
     display: none;
+}
+@keyframes spin {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
+}
+
+#clickButton{
+    animation: spin 40s linear 0s infinite;
+}
+.upgrades{
+    display: grid;
+    margin: 5%;
+    grid-template-columns: 33% 33% 33%;
 }
