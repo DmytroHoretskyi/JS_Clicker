@@ -1,0 +1,53 @@
+.clicker{
+    margin-top: 50px ;
+    margin-left: 50px;
+    text-align: start;
+}
+#counter{
+    text-align: center;
+}
+#siteBlocker{
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    z-index: 1;
+    position: absolute;
+}
+#popUp{
+    z-index: 2;
+    position: absolute;
+    width:100%;
+    height: 100%;
+    text-align: center;
+
+}
+#mistake{
+    font-size: 25px;
+    color: chartreuse;
+}
+#clickButton{
+    position: center;
+}
+.hidden{
+    display: none;
+}
+@keyframes spin {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
+}
+
+#clickButton{
+    /*max-width: 300px;*/
+    animation: spin 40s linear 0s infinite;
+}
+
+/* #clickButton:active {
+    max-width: 200px;
+} */
+
+.upgrades{
+    display: grid;
+    margin: 5%;
+    grid-template-columns: 33% 33% 33%;
+}
