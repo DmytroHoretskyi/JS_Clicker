@@ -2,9 +2,8 @@
     margin-top: 50px ;
     margin-left: 50px;
     text-align: start;
-}
-#counter{
-    text-align: center;
+    width: 400px;
+    height: 400px;
 }
 #siteBlocker{
     background-color: black;
@@ -28,6 +27,12 @@
 }
 #clickButton{
     position: center;
+    width: 300px;
+    height: 300px;
+}
+#clickButton:active{
+    height: 270px;
+    width: 270px;
 }
 .hidden{
     display: none;
@@ -50,4 +55,7 @@
     display: grid;
     margin: 5%;
     grid-template-columns: 33% 33% 33%;
+}
+#counters{
+    text-align: center;
 }
