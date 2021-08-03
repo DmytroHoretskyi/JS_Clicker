@@ -69,8 +69,14 @@ html{
 }
 
 #clickButton{
+    /*max-width: 300px;*/
     animation: spin 40s linear 0s infinite;
 }
+
+/* #clickButton:active {
+    max-width: 200px;
+} */
+
 .upgrades{
     display: grid;
     margin: 5%;

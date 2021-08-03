@@ -28,22 +28,35 @@ let userData = {
      upgradeCount:0,
       upgradeCost:100,
    },
+
+let userData = {
+   clickCount: 0,
+   upgradeCount: 1,
+   upgradeStocks: 10,
 };
 
 if ('userData' in sessionStorage) {
    userData = JSON.parse(sessionStorage.getItem('userData'));
 }
 
+<<<<<<< HEAD
 h1Counter.textContent = `Bit counter: ${userData.clickCount}`;
 
+=======
+
+h1Counter.textContent = `click counter: ${userData.clickCount}`;
+>>>>>>> 1c7bb6323903ad3238d36e26e87f4b0ce7a4bbc2
 
 console.log(userData.timeUpgradeButton60sec.upgradeCount)
+h1Counter.textContent = 'click counter: ' + userData.clickCount;
+
 popUpError.addEventListener('click',() => {
    cautionMessage.classList.add('hidden');
    popUp.classList.add('hidden');
 });
 
 upgradeButton.addEventListener('click', () => {
+
    if (userData.clickUpgradeButton.upgradeCost > userData.clickCount){
       popUp.classList.remove('hidden');
       cautionMessage.classList.remove('hidden')
@@ -68,9 +81,23 @@ timeUpgrade60sec.addEventListener('click', () =>{
       clickPerTime60Sec();
       userData.timeUpgradeButton60sec.upgradeCount++;
       userData.timeUpgradeButton60sec.upgradeCost*=userData.upgradeMultiply;
+<<<<<<< HEAD
       clickPerMinute.textContent = `Bit per minute: ${userData.timeUpgradeButton30sec.upgradeCount * 2
                                                       + userData.timeUpgradeButton60sec.upgradeCount}`;
       timeUpgrade60secStatistic.textContent = `${userData.timeUpgradeButton60sec.upgradeCount} Bit per minute`
+=======
+      clickPerMinute.textContent = `Click per minute: ${userData.timeUpgradeButton60sec.upgradeCount}`;
+
+   if (userData.upgradeStocks > userData.clickCount){
+      popUp.classList.remove('hidden');
+      cautionMessage.classList.remove('hidden')
+      popUpText.textContent = `Alert! you need ${userData.upgradeStocks} clicks`;
+
+   } else {
+      userData.clickCount -= userData.upgradeStocks;
+      userData.upgradeCount += 1;
+      h1Counter.textContent = 'click counter: ' + userData.clickCount;
+>>>>>>> 1c7bb6323903ad3238d36e26e87f4b0ce7a4bbc2
    }
 });
 timeUpgrade30sec.addEventListener('click', () => {
@@ -78,6 +105,7 @@ timeUpgrade30sec.addEventListener('click', () => {
       popUp.classList.remove('hidden');
       cautionMessage.classList.remove('hidden')
       popUpText.textContent = `Alert! you need ${userData.timeUpgradeButton30sec.upgradeCost} Bits`;
+
 
    } else {
       userData.clickCount -= userData.timeUpgradeButton30sec.upgradeCost;
@@ -105,5 +133,10 @@ buttonId.addEventListener('click', () => {
    userData.clickCount += userData.clickUpgradeButton.upgradeCount;
    h1Counter.textContent = 'Bit counter: '+ userData.clickCount;
    bitStatistic.textContent = `Bit's by one click : ${userData.clickUpgradeButton.upgradeCount} `
+   sessionStorage.setItem('userData', JSON.stringify(userData));
+});
+buttonId.addEventListener('click', () => {
+   userData.clickCount += userData.upgradeCount;
+   h1Counter.textContent = 'click counter: '+ userData.clickCount;
    sessionStorage.setItem('userData', JSON.stringify(userData));
 });
