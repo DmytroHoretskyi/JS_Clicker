@@ -1,3 +1,29 @@
+html{
+    background-image: url("images/backgroundImage.jpg");
+    background-size: cover;
+
+}
+.buttons {
+    background-color: #1531bb;
+    padding:10px;
+    position:relative;
+    font-family: 'Open Sans', sans-serif;
+    font-size:12px;
+    text-decoration:none;
+    color:#fff;
+    background-image: linear-gradient(bottom, rgb(10, 31, 167) 0%, rgb(38, 61, 177) 100%);
+    box-shadow: inset 0px 1px 0px #7f9ff1, 0px 6px 0px #0d316f;
+    border-radius: 5px;
+    margin: 10px;
+    width: 100%;
+    }
+
+.buttons:active {
+    top:7px;
+    box-shadow: inset 0px 1px 0px #7f98f1, inset 0px -1px 0px #0d226f;
+    color: #23ec00;
+    text-shadow: 0px 1px 1px rgba(255,255,255,0.3);
+}
 .clicker{
     margin-top: 50px ;
     margin-left: 50px;
@@ -52,4 +78,40 @@
 }
 #counters{
     text-align: center;
+    margin: 0 40%;
+}
+#upgradeBoard{
+    text-align: center;
+}
+#upgradeList{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    line-height: 45px;
+    border: 2px solid black;
+}
+.table1, .table3{
+
+    font-size: 20px;
+    background-color: #d5d4d4;
+    border-bottom: 2px solid rgba(128, 128, 128, 0.64);
+
+}
+.table2{
+
+    font-size: 20px;
+    background-color: #ffffff;
+    border-bottom: 2px solid rgba(128, 128, 128, 0.64);
+}
+#upgradeBoardHeader{
+    margin: 0;
+    font-size: 30px;
+    background-color: #000000;
+    -webkit-text-fill-color: white;
+}
+#counter{
+    border: 5px solid black;
+}
+#clickPerMinute{
+    border: 5px solid black;
 }
