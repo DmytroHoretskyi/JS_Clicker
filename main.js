@@ -25,21 +25,30 @@ let userData = {
      upgradeCount:0,
       upgradeCost:100,
    },
+
+let userData = {
+   clickCount: 0,
+   upgradeCount: 1,
+   upgradeStocks: 10,
 };
 
 if ('userData' in sessionStorage) {
    userData = JSON.parse(sessionStorage.getItem('userData'));
 }
 
+
 h1Counter.textContent = `click counter: ${userData.clickCount}`;
 
 console.log(userData.timeUpgradeButton60sec.upgradeCount)
+h1Counter.textContent = 'click counter: ' + userData.clickCount;
+
 popUpError.addEventListener('click',() => {
    cautionMessage.classList.add('hidden');
    popUp.classList.add('hidden');
 });
 
 upgradeButton.addEventListener('click', () => {
+
    if (userData.clickUpgradeButton.upgradeCost > userData.clickCount){
       popUp.classList.remove('hidden');
       cautionMessage.classList.remove('hidden')
@@ -65,6 +74,16 @@ timeUpgrade60sec.addEventListener('click', () =>{
       userData.timeUpgradeButton60sec.upgradeCount++;
       userData.timeUpgradeButton60sec.upgradeCost*=userData.upgradeMultiply;
       clickPerMinute.textContent = `Click per minute: ${userData.timeUpgradeButton60sec.upgradeCount}`;
+
+   if (userData.upgradeStocks > userData.clickCount){
+      popUp.classList.remove('hidden');
+      cautionMessage.classList.remove('hidden')
+      popUpText.textContent = `Alert! you need ${userData.upgradeStocks} clicks`;
+
+   } else {
+      userData.clickCount -= userData.upgradeStocks;
+      userData.upgradeCount += 1;
+      h1Counter.textContent = 'click counter: ' + userData.clickCount;
    }
 });
 timeUpgrade30sec.addEventListener('click', () => {
@@ -72,6 +91,7 @@ timeUpgrade30sec.addEventListener('click', () => {
       popUp.classList.remove('hidden');
       cautionMessage.classList.remove('hidden')
       popUpText.textContent = `Alert! you need ${userData.timeUpgradeButton30sec.upgradeCost} clicks`;
+
 
    } else {
       userData.clickCount -= userData.timeUpgradeButton60sec.upgradeCost;
@@ -95,6 +115,11 @@ setInterval(clickPerTime30Sec, 30000);
 setInterval(clickPerTime60Sec, 60000);
 buttonId.addEventListener('click', () => {
    userData.clickCount += userData.clickUpgradeButton.upgradeCount;
+   h1Counter.textContent = 'click counter: '+ userData.clickCount;
+   sessionStorage.setItem('userData', JSON.stringify(userData));
+});
+buttonId.addEventListener('click', () => {
+   userData.clickCount += userData.upgradeCount;
    h1Counter.textContent = 'click counter: '+ userData.clickCount;
    sessionStorage.setItem('userData', JSON.stringify(userData));
 });
