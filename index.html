@@ -13,35 +13,30 @@
 <div id="popUp" class="hidden"><button id="close">X</button>
     <br><span id="mistake"></span></div>
 <article id="counters">
-    <h1 id="counter">click counter: 0</h1>
-    <h1 id="clickPerMinute">Click per minute: 0</h1>
+    <h1 id="counter">Bit counter: 0</h1>
+    <h1 id="clickPerMinute">Bit per minute: 0</h1>
 </article>
 <div class="clicker">
     <img alt="click" src="images/clickIMG.png" id="clickButton" >
 </div>
 <div class="upgrades">
-    <div><button id="upgradeButton">buy multiple of click</button>
+    <div><button class="buttons" id="upgradeButton">Buy multiple of Bit</button>
         <br>
-        <button id="60SecUpgrade">Buy 1 click per minute</button>
+        <button class="buttons" id="60SecUpgrade">Buy 1 Bit per minute</button>
         <br>
-        <button id="30SecUpgrade">BUy 10 click's per 30 second</button>
+        <button class="buttons" id="30SecUpgrade">Buy 10 Bit's per 30 second</button>
     </div>
+    <div></div>
 
-    <div><p>scoreboard</p></div>
+    <div id="upgradeBoard">
+        <p id="upgradeBoardHeader">Upgrade board</p>
+        <ul id="upgradeList">
+            <li class="table1" id="bitUpgradeStatistic">Bit's by one click : 1</li>
+            <li class="table2" id="clickPer60secStatistic">0 Bit per minute </li>
+            <li class="table3" id="clickPer30secStatistic">0 Bit per 30 sec</li>
+        </ul>
+    </div>
 </div>
 <script src="main.js"></script>
-    <div id="siteBlocker" class="hidden"></div>
-    <div id="popUp" class="hidden"><button id="close">X</button>
-        <br><span id="mistake"></span></div>
-
-    <div class="clicker">
-        <h1 id="counter">click counter: 0</h1>
-        <img alt="click" src="images/clickIMG.png" id="clickButton" width="300px" height="300px">
-    </div>
-    <div class="upgrades">
-        <div><button id="upgradeButton">buy multiple of click</button></div>
-        <div><p>scoreboard</p></div>
-    </div>
-    <script src="main.js"></script>
 </body>
 </html>
